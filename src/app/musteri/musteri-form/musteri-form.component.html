@@ -1,0 +1,106 @@
+<div class="card">
+  <form [formGroup]="musteriForm" #formRef="ngForm" (ngSubmit)="onSubmit()">
+    <p-fieldset styleClass="borderless-header" legend="Müşteri Kayıt">
+      <div class="p-fluid p-formgrid p-grid p-d-flex p-ai-center">
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="ad" class="form-label"> Müşteri Adı</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input id="ad" type="text" pInputText formControlName="ad" />
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="soyad" class="form-label"> Müşteri Soyadı</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input
+                id="soyad"
+                type="text"
+                pInputText
+                formControlName="soyad"
+              />
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="cepNo" class="form-label"> Cep Numarası</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input
+                id="cepNo"
+                type="text"
+                pInputText
+                formControlName="cepNo"
+              />
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="evNo" class="form-label"> Ev No</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input id="evNo" type="text" pInputText formControlName="evNo" />
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="email" class="form-label"> E-Mail</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input
+                id="email"
+                type="text"
+                pInputText
+                formControlName="email"
+              />
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="musteriTipi" class="form-label"> Müşteri Tipi</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <p-dropdown
+                [showClear]="true"
+                [options]="musteriTipiList"
+                filter="true"
+                filterBy="value,label"
+                resetFilterOnHide="true"
+                placeholder="Müşteri Tipini Seçiniz"
+                formControlName="musteriTipi"
+              >
+              </p-dropdown>
+            </span>
+          </div>
+        </div>
+      </div>
+    </p-fieldset>
+
+    <div class="p-text-right p-mb-2 p-mt-2 p-mr-4">
+      <button
+        pButton
+        type="submit"
+        label="Kaydet"
+        class="p-button-raised p-button-sm p-button-success"
+      ></button>
+    </div>
+  </form>
+</div>

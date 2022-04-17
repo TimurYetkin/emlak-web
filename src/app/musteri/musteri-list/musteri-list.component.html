@@ -1,0 +1,81 @@
+<div class="card">
+  <div class="p-text-right p-mb-2 p-mt-4 p-mr-2">
+    <button
+      pButton
+      type="button"
+      icon="pi pi-plus"
+      class="p-button-raised p-button-sm p-ml-2"
+      routerLink="new"
+    ></button>
+    <button
+      pButton
+      type="button"
+      icon="pi pi-pencil"
+      class="p-button-raised p-button-sm p-ml-2 p-button-success"
+      (click)="onEdit()"
+      [disabled]="checkRows()"
+    ></button>
+    <button
+      pButton
+      type="button"
+      icon="pi pi-trash"
+      class="p-button-raised p-button-sm p-ml-2 p-button-danger"
+      (click)="onDelete()"
+      [disabled]="checkRows()"
+    ></button>
+  </div>
+
+  <p-table
+    [columns]="musteriGridColumns"
+    [value]="musteriGridData"
+    [(selection)]="selectedMusteriGridRows"
+    dataKey="id"
+    [loading]="loading"
+    [lazy]="true"
+    (onLazyLoad)="onFilter($event)"
+    [paginator]="true"
+    [rows]="pageOptions.size"
+    [totalRecords]="totalRecords"
+    [showCurrentPageReport]="true"
+    [currentPageReportTemplate]="
+      musteriGridData
+        ? 'Toplam {totalRecords} kayıt içerisinden {first} ve {last} arası gösteriliyor'
+        : ''
+    "
+    [rowsPerPageOptions]="[5, 10, 20]"
+    [resizableColumns]="true"
+    columnResizeMode="expand"
+    styleClass="p-datatable-gridlines"
+    [rowHover]="true"
+  >
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th rowspan="3" style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          <div class="p-d-flex p-jc-between p-ai-center">
+            {{ col.header }}
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-musteri let-columns="columns">
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="musteri"></p-tableCheckbox>
+        </td>
+        <td *ngFor="let col of columns">
+          {{ musteri | field: col }}
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage" let-columns>
+      <tr>
+        <td [attr.colspan]="columns.length + 1">Kayıt bulunamadı.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

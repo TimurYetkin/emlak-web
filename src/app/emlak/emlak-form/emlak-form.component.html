@@ -1,0 +1,170 @@
+<div class="card">
+  <form [formGroup]="emlakForm" #formRef="ngForm" (ngSubmit)="onSubmit()">
+    <p-fieldset styleClass="borderless-header" legend="Müşteri Kayıt">
+      <div class="p-fluid p-formgrid p-grid p-d-flex p-ai-center">
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="isletmeId" class="form-label"> İşletme</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <p-dropdown
+                [showClear]="true"
+                [options]="isletmeList"
+                filter="true"
+                filterBy="value,label"
+                resetFilterOnHide="true"
+                placeholder="İşletme Seçiniz"
+                formControlName="isletmeId"
+                scrollHeight="400px"
+                (onChange)="onIsletmeChange()"
+              >
+              </p-dropdown>
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="musteriId" class="form-label"> Müşteri</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <p-dropdown
+                [showClear]="true"
+                [options]="musteriList"
+                filter="true"
+                filterBy="value,label"
+                resetFilterOnHide="true"
+                placeholder="Müşteri Seçiniz"
+                formControlName="musteriId"
+                scrollHeight="400px"
+              >
+              </p-dropdown>
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="emlakTuru" class="form-label"> Emlak Türü</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <p-dropdown
+                [showClear]="true"
+                [options]="emlakTuruList"
+                filter="true"
+                filterBy="value,label"
+                resetFilterOnHide="true"
+                placeholder="Emlak Türü Seçiniz"
+                formControlName="emlakTuru"
+                scrollHeight="400px"
+              >
+              </p-dropdown>
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="odaSayisi" class="form-label"> Oda Sayısı</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <p-dropdown
+                [showClear]="true"
+                [options]="odaSayisiList"
+                filter="true"
+                filterBy="value,label"
+                resetFilterOnHide="true"
+                placeholder="Oda Sayısı Seçiniz"
+                formControlName="odaSayisi"
+                scrollHeight="400px"
+              >
+              </p-dropdown>
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="metreKare" class="form-label"> Metrekare</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <p-inputNumber
+                class="width-100p"
+                [style]="{ width: '100%' }"
+                [useGrouping]="false"
+                formControlName="metreKare"
+              ></p-inputNumber>
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="balkonSayisi" class="form-label"> Balkon Sayısı</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <p-inputNumber
+                class="width-100p"
+                [style]="{ width: '100%' }"
+                [useGrouping]="false"
+                formControlName="balkonSayisi"
+              ></p-inputNumber>
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="binaKati" class="form-label"> Bina Katı</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <p-inputNumber
+                class="width-100p"
+                [style]="{ width: '100%' }"
+                [useGrouping]="false"
+                formControlName="binaKati"
+              ></p-inputNumber>
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="isinmaTuru" class="form-label"> Isınma Türü</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <p-dropdown
+                [showClear]="true"
+                [options]="isinmaTuruList"
+                filter="true"
+                filterBy="value,label"
+                resetFilterOnHide="true"
+                placeholder="Isınma Türü Seçiniz"
+                formControlName="isinmaTuru"
+                scrollHeight="400px"
+              >
+              </p-dropdown>
+            </span>
+          </div>
+        </div>
+      </div>
+    </p-fieldset>
+
+    <div class="p-text-right p-mb-2 p-mt-2 p-mr-4">
+      <button
+        pButton
+        type="submit"
+        label="Kaydet"
+        class="p-button-raised p-button-sm p-button-success"
+      ></button>
+    </div>
+  </form>
+</div>

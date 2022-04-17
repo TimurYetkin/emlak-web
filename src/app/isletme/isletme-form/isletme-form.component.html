@@ -1,0 +1,91 @@
+<div class="card">
+  <form [formGroup]="isletmeForm" #formRef="ngForm" (ngSubmit)="onSubmit()">
+    <p-fieldset styleClass="borderless-header" legend="İşletme Kayıt">
+      <div class="p-fluid p-formgrid p-grid p-d-flex p-ai-center">
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="isletmeAdi" class="form-label"> İşletme Adı</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input
+                id="isletmeAdi"
+                type="text"
+                pInputText
+                formControlName="isletmeAdi"
+              />
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="yetkiliKisi" class="form-label"> Yetkili Kişi</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input
+                id="yetkiliKisi"
+                type="text"
+                pInputText
+                formControlName="yetkiliKisi"
+              />
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="adres" class="form-label"> Adres</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input
+                id="adres"
+                type="text"
+                pInputText
+                formControlName="adres"
+              />
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="fax" class="form-label"> Fax</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input id="fax" type="text" pInputText formControlName="fax" />
+            </span>
+          </div>
+        </div>
+
+        <div class="p-field p-grid p-col-6">
+          <div class="p-col-4">
+            <label for="telefon" class="form-label"> Telefon</label>
+          </div>
+          <div class="p-col-8">
+            <span class="p-input-icon-right">
+              <input
+                id="telefon"
+                type="text"
+                pInputText
+                formControlName="telefon"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </p-fieldset>
+
+    <div class="p-text-right p-mb-2 p-mt-2 p-mr-4">
+      <button
+        pButton
+        type="submit"
+        label="Kaydet"
+        class="p-button-raised p-button-sm p-button-success"
+      ></button>
+    </div>
+  </form>
+</div>
